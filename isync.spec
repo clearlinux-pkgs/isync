@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x6F5447F95D001D85 (ossi@kde.org)
 #
 Name     : isync
-Version  : 1.3.2
-Release  : 2
-URL      : https://sourceforge.net/projects/isync/files/isync/1.3.2/isync-1.3.2.tar.gz
-Source0  : https://sourceforge.net/projects/isync/files/isync/1.3.2/isync-1.3.2.tar.gz
-Source1  : https://sourceforge.net/projects/isync/files/isync/1.3.2/isync-1.3.2.tar.gz.asc
+Version  : 1.3.4
+Release  : 3
+URL      : https://sourceforge.net/projects/isync/files/isync/1.3.4/isync-1.3.4.tar.gz
+Source0  : https://sourceforge.net/projects/isync/files/isync/1.3.4/isync-1.3.4.tar.gz
+Source1  : https://sourceforge.net/projects/isync/files/isync/1.3.4/isync-1.3.4.tar.gz.asc
 Summary  : Utility to synchronize IMAP mailboxes with local maildir folders
 Group    : Development/Tools
 License  : GPL-2.0
@@ -62,15 +62,15 @@ man components for the isync package.
 
 
 %prep
-%setup -q -n isync-1.3.2
-cd %{_builddir}/isync-1.3.2
+%setup -q -n isync-1.3.4
+cd %{_builddir}/isync-1.3.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1594406879
+export SOURCE_DATE_EPOCH=1612383227
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -87,14 +87,14 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check
+make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1594406879
+export SOURCE_DATE_EPOCH=1612383227
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/isync
-cp %{_builddir}/isync-1.3.2/COPYING %{buildroot}/usr/share/package-licenses/isync/dfac199a7539a404407098a2541b9482279f690d
-cp %{_builddir}/isync-1.3.2/debian/copyright %{buildroot}/usr/share/package-licenses/isync/6743e7ed1deaa4517560058bb285d70c11eb58c4
+cp %{_builddir}/isync-1.3.4/COPYING %{buildroot}/usr/share/package-licenses/isync/dfac199a7539a404407098a2541b9482279f690d
+cp %{_builddir}/isync-1.3.4/debian/copyright %{buildroot}/usr/share/package-licenses/isync/6743e7ed1deaa4517560058bb285d70c11eb58c4
 %make_install
 
 %files
