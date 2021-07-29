@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x6F5447F95D001D85 (ossi@kde.org)
 #
 Name     : isync
-Version  : 1.4.2
-Release  : 6
-URL      : https://sourceforge.net/projects/isync/files/isync/1.4.2/isync-1.4.2.tar.gz
-Source0  : https://sourceforge.net/projects/isync/files/isync/1.4.2/isync-1.4.2.tar.gz
-Source1  : https://sourceforge.net/projects/isync/files/isync/1.4.2/isync-1.4.2.tar.gz.asc
+Version  : 1.4.3
+Release  : 7
+URL      : https://sourceforge.net/projects/isync/files/isync/1.4.3/isync-1.4.3.tar.gz
+Source0  : https://sourceforge.net/projects/isync/files/isync/1.4.3/isync-1.4.3.tar.gz
+Source1  : https://sourceforge.net/projects/isync/files/isync/1.4.3/isync-1.4.3.tar.gz.asc
 Summary  : Utility to synchronize IMAP mailboxes with local maildir folders
 Group    : Development/Tools
 License  : GPL-2.0
@@ -62,23 +62,23 @@ man components for the isync package.
 
 
 %prep
-%setup -q -n isync-1.4.2
-cd %{_builddir}/isync-1.4.2
+%setup -q -n isync-1.4.3
+cd %{_builddir}/isync-1.4.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1623078419
+export SOURCE_DATE_EPOCH=1627570480
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -90,11 +90,11 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1623078419
+export SOURCE_DATE_EPOCH=1627570480
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/isync
-cp %{_builddir}/isync-1.4.2/COPYING %{buildroot}/usr/share/package-licenses/isync/dfac199a7539a404407098a2541b9482279f690d
-cp %{_builddir}/isync-1.4.2/debian/copyright %{buildroot}/usr/share/package-licenses/isync/6743e7ed1deaa4517560058bb285d70c11eb58c4
+cp %{_builddir}/isync-1.4.3/COPYING %{buildroot}/usr/share/package-licenses/isync/dfac199a7539a404407098a2541b9482279f690d
+cp %{_builddir}/isync-1.4.3/debian/copyright %{buildroot}/usr/share/package-licenses/isync/6743e7ed1deaa4517560058bb285d70c11eb58c4
 %make_install
 
 %files
