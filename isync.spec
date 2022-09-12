@@ -6,7 +6,7 @@
 #
 Name     : isync
 Version  : 1.4.4
-Release  : 8
+Release  : 9
 URL      : https://sourceforge.net/projects/isync/files/isync/1.4.4/isync-1.4.4.tar.gz
 Source0  : https://sourceforge.net/projects/isync/files/isync/1.4.4/isync-1.4.4.tar.gz
 Source1  : https://sourceforge.net/projects/isync/files/isync/1.4.4/isync-1.4.4.tar.gz.asc
