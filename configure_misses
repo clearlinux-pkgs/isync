@@ -1,2 +1,4 @@
 Configure miss: Berkeley DB >= 4.1
+Configure miss: Berkeley DB >= 4.1
+Configure miss: inet_ntoa in -lnsl
 Configure miss: inet_ntoa in -lnsl

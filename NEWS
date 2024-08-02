@@ -1,3 +1,41 @@
+[1.5.0]
+
+Changed default config & state locations to follow the XDG basedir spec.
+The old locations remain supported.
+
+The reference point for relative local paths in the configuration file
+is now the file's containing directory.
+
+Placeholders will be now created for messages exceeding MaxSize even if
+they are flagged on the source side.
+
+Renamed the ReNew/--renew/-N options to Upgrade/--upgrade/-u
+and Delete/--delete/-d to Gone/--gone/-g.
+
+Superseded SSLVersions option with TLSVersions, and disabled TLS v1.0
+and v1.1 by default. Renamed SSLType option to TLSType.
+
+Made the Channel side to expire with MaxMessages configurable.
+
+MaxMessages and MaxSize can be used together now.
+
+Added support for IMAP mailbox names with non-ASCII characters.
+
+Added support for Maildir Paths with suffixes.
+
+The unfiltered list of mailboxes in each Store can be printed now.
+
+A proper summary is now printed prior to exiting.
+This includes expunges, which are now included in the progress as well.
+
+Added new sync operation 'Old'.
+
+Added support for mirroring deletions more accurately.
+
+Added --dry-run option.
+
+Added --ext-exit option.
+
 [1.4.0]
 
 The 'isync' compatibility wrapper was removed.
